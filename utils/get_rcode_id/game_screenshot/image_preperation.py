@@ -1,9 +1,13 @@
+import os
+
 from PIL import Image
 import pytesseract
-from django.core.files import File
-from uuid import uuid4
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+from dotenv import load_dotenv, dotenv_values
+load_dotenv()
+
+if os.getenv("WINDOWS_DEV_MODE") == "true":
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 # Get the bounding box proportional to the full screen tested on, so that it can be used for other resolutions
 crop_box_ratio = (655/1920, 965/1080, 830/1920, 990/1080)

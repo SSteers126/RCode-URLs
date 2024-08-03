@@ -46,15 +46,20 @@
             <h3>Example Screenshots</h3>
             <div id="good-screenshot-examples">
                 <img id="main-menu-screenshot" src="{% static "/img/r-code examples/Main Menu.png" %}" alt="An image showing the R-Code from the main menu">
-                <img id="main-menu-screenshot" src="{% static "/img/r-code examples/F7.png" %}" alt="An image showing the R-Code from within an online room after selecting it from the pause menu">
+                <img id="f7-screenshot" src="{% static "/img/r-code examples/F7.png" %}" alt="An image showing the R-Code from within an online room after selecting it from the pause menu">
             </div>
             
         </div>
 
     </div>
 
-    <form enctype="multipart/form-data" method="post">{% csrf_token %}
-        {{ form.as_p }}
+    <div id="screenshot-form-container">
+        <h3>Upload your screenshot</h3>
+        <p>Sometimes it might take a little bit for the page to give you your code. Don't worry, it will get back to you - sometimes the host can be a bit busy.</p>
+
+        <form enctype="multipart/form-data" method="post">{% csrf_token %}
+            {{ form.as_p }}
         <input type="submit" value="Get my Puddle URL!">
     </form>
+    </div>
 {% endblock content %}

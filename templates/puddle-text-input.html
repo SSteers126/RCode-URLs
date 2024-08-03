@@ -1,4 +1,5 @@
 {% extends "_base.html" %}
+{% load static %}
 
 {% block title %}Get Puddle Link from R-Code ID{% endblock title %}
 
@@ -6,7 +7,12 @@
     <div id="rcode-text-info">
         <h2>Manual R-Code ID Input</h2>
         
-    <p>ADD IMPORTANT INFO, REITERATE CHECKING INPUT AND SHOW ID LOCATION</p>
+        <p>Your ID can be found when you check your R-Code by looking in the bottom left corner for an 18-digit number. It is highlighted in <span class="img-highlight-colour">purple</span> in the following image:</p>
+        <map name="rcode-id-map">
+            <area shape="rect" coords="34,44,270,350" alt="Computer" href="Here!">
+        </map>
+        <img id="f7-screenshot" src="{% static "/img/r-code examples/F7-highlighted.png" %}" 
+        alt="An image showing the R-Code from within an online room, with the R-Code ID highlighted" usemap="#rcode-id-map">
     </div>
 
     <form method="post">{% csrf_token %}
