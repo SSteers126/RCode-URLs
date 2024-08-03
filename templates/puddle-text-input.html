@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+
+{% block title %}Get Puddle Link from R-Code ID{% endblock title %}
+
+{% block content %}
+    <div id="rcode-text-info">
+        <h2>Manual R-Code ID Input</h2>
+        
+    <p>ADD IMPORTANT INFO, REITERATE CHECKING INPUT AND SHOW ID LOCATION</p>
+    </div>
+
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Get my Puddle URL!">
+    </form>
+{% endblock content %}

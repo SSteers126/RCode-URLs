@@ -1,0 +1,60 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block title %}Get Puddle Link from R-Code Image{% endblock title %}
+
+{% block content %}
+    <div id="rcode-screenshot-info">
+        <h2>Get Puddle link from game screenshot</h2>
+
+        <p>
+            I don't blame you for not wanting to type it out, it's really boring.
+            Either way, it's good to know what's expected in your screenshot.
+        </p>
+
+        <div id="screenshot-requirements">
+            <h3>
+                A game screenshot should:
+            </h3>
+            <ul>
+                <li>
+                    Be directly captured from the game - This means that if you try and take a picture of a screen with a camera, 
+                    the chances are it's not going to work 
+                    (unless you're incredibly good at alignment <i>and</i> your camera gets no glare from the screen).
+                
+                <ul>
+                    <li>For those on PC, CTRL+ALT+PrtScn will automatically only get a capture of the currently focused application, which is ideal for this</li>
+                    <ul>
+                        <li>There are quite a few websites that will let you download screenshots from the clipboard to a file, <a href="https://www.paste.photos/">such as this one</a></li>
+                    </ul>
+                    <li>Console screenshots should also work, but you also need to get them somewhere that lets you upload it here</li>
+                </ul>
+                </li>
+
+                <li>
+                    Contain the whole game window
+                    <ul>
+                        <li>
+                            For many reasons, the website will look specifically where the ID will be in context of the whole game. Cropping the R-Code out and uploading it <i>will not</i> work.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="good-screenshots">
+            <h3>Example Screenshots</h3>
+            <div id="good-screenshot-examples">
+                <img id="main-menu-screenshot" src="{% static "/img/r-code examples/Main Menu.png" %}" alt="An image showing the R-Code from the main menu">
+                <img id="main-menu-screenshot" src="{% static "/img/r-code examples/F7.png" %}" alt="An image showing the R-Code from within an online room after selecting it from the pause menu">
+            </div>
+            
+        </div>
+
+    </div>
+
+    <form enctype="multipart/form-data" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Get my Puddle URL!">
+    </form>
+{% endblock content %}

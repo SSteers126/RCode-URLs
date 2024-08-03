@@ -1,0 +1,15 @@
+{% extends "_base.html" %}
+
+{% block title %}R-Code Converter - Puddle Link{% endblock title %}
+
+{% block content %}
+<body>
+    <h1>Your puddle URL</h1>
+    
+    <p><a href="{{ puddle_url }}">You should be able to find your puddle profile here!</a></p>
+
+    {% if search_type == "img" %}
+    	<p>For future reference, the ID we found is <code>{{ id }}</code></p>
+    {% endif %} 
+</body>
+{% endblock content %}

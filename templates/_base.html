@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}R-Code To Puddle Page{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static "css/rcode-styles.min.css" %}">
+    <link rel="apple-touch-icon" sizes="180x180" href={% static "/icons/apple-touch-icon.png"%}>
+    <link rel="icon" type="image/png" sizes="32x32" href={% static "/icons/favicon-32x32.png" %}>
+    <link rel="icon" type="image/png" sizes="16x16" href={% static "/icons/favicon-16x16.png" %}>
+    <link rel="manifest" href={% static "/icons/site.webmanifest" %}>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'puddle-id-options' %}">R-Code to Puddle (replace with header)</a></h1>
+    </header>
+    <div class="container" id="content-container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>

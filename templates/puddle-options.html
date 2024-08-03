@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+
+{% block title %}R-Code Converter - Home{% endblock title %}
+
+{% block content %}
+    <div id="homepage-info">
+        <h2>Welcome To The R-Code Converter!</h2>
+
+        <p>This page serves as a way to simplify getting your <a href="https://puddle.farm/">Puddle/Rating Update</a> profile using your R-Code.</p>
+
+        <p>If you'd like to manually type the ID from your R-Code in, <a href="{% url 'text-to-puddle' %}">you can do so here.</a></p>
+
+        <p>If you can get a screenshot of your game, you can instead let the website try to do the reading for you by <a href="{% url 'img-to-puddle' %}">uploading it here.</a></p>
+    </div>
+
+    {% comment %} <p><a href="{% url 'r-code-to-puddle' %}">Text to link</a></p>
+    <p><a href="{% url 'img-to-puddle' %}">Screenshot to link</a></p> {% endcomment %}
+{% endblock content %}

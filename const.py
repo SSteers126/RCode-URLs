@@ -1,0 +1,6 @@
+import re
+
+RCODE_ID_PATTERN = r"\d{18}"
+
+NON_TERMINATED_RCODE_ID_REGEX = re.compile(RCODE_ID_PATTERN)
+TERMINATED_RCODE_ID_REGEX = re.compile("^" + RCODE_ID_PATTERN + "$")

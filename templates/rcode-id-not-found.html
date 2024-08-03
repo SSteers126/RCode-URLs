@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+
+{% block title %}R-Code ID Not Found{% endblock title %}
+
+{% block content %}
+    <div id="no-id-info">
+        <h2>R-Code ID not found</h2>
+    
+        <p>
+            <i>Unfortunately</i>, computers are bad at reading and this one couldn't figure out what your ID is.
+        </p>
+        <p>
+            <i>Fortunately</i>, you can do the reading for it and 
+            <a href="{% url 'text-to-puddle' %}">type the code in yourself</a>, and let it feel a <i>bit</i> 
+            better about itself by getting your puddle link for you afterward. 
+        </p>
+    </div>
+{% endblock content %}
